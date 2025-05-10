@@ -33,7 +33,11 @@ jobs:
       - name: Build APK
         run: |
           cd android
-          ./gradlew assembleRelease
+          ./gradlew assembleDebug
+
+      # Verify that APK exists
+      - name: Verify APK exists
+        run: ls android/app/build/outputs/apk/release/
 
       # Upload the APK as an artifact for download
       - name: Upload APK
