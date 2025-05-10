@@ -38,6 +38,13 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync
 
+      # Install Java 17 to ensure the right version is used
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+
       # Grant execute permission to gradlew script
       - name: Grant execute permission to gradlew
         run: chmod +x android/gradlew
