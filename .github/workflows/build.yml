@@ -5,6 +5,11 @@ on:
     branches:
       - main  # Replace with your branch if you use a different one (e.g., 'master')
 
+permissions:
+  contents: write
+  id-token: write
+  actions: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,6 +17,10 @@ jobs:
       # Checkout code from GitHub
       - name: Checkout code
         uses: actions/checkout@v2
+
+      # Verify that the repo files are properly checked out
+      - name: List project files
+        run: ls -R .
 
       # Set up Node.js environment
       - name: Set up Node.js
@@ -39,9 +48,9 @@ jobs:
       - name: Verify APK exists
         run: ls android/app/build/outputs/apk/debug/
 
-      # Upload the APK as an artifact for download
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
+      # Upload the APK as an artifact for download (using v2 to avoid v3 issues)
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v2  # Switch to v2 to avoid issues with v3
         with:
           name: app-debug.apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
