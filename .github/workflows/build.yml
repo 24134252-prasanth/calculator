@@ -33,7 +33,7 @@ jobs:
       - name: Build APK
         run: |
           cd android
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --stacktrace
 
       # Verify that APK exists
       - name: Verify APK exists
