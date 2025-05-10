@@ -39,10 +39,10 @@ jobs:
         run: npx cap sync
 
       # Install Java 17 to ensure the right version is used
-      - name: Set up Java 17
+      - name: Set up Java 11
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '11'
           distribution: 'zulu'
 
       # Grant execute permission to gradlew script
