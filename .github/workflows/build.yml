@@ -49,8 +49,8 @@ jobs:
         run: ls android/app/build/outputs/apk/debug/
 
       # Upload the APK as an artifact for download (using v2 to avoid v3 issues)
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v3  # Switch to v2 to avoid issues with v3
-        with:
-          name: app-debug.apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+      # - name: Upload Debug APK
+      #   uses: actions/upload-artifact@v3  # Switch to v2 to avoid issues with v3
+      #   with:
+      #     name: app-debug.apk
+      #     path: android/app/build/outputs/apk/debug/app-debug.apk
