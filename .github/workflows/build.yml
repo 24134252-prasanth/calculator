@@ -26,7 +26,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Specify the Node.js version you want
+          node-version: '20'  # Specify the Node.js version you want
 
       # Install dependencies (Capacitor and project dependencies)
       - name: Install dependencies
